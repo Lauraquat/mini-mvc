@@ -3,30 +3,30 @@
 namespace models;
 
 use models\base\SQL;
+use models\classes\Movie;
 
 class MoviesModel extends SQL
 {
     public function __construct()
     {
-        parent::__construct('movies', 'id');
+        parent::__construct('movie', 'id');
     }
+    
 
-    /**
-     * Méthode d'exemple permettant l'accès aux données avec une
-     * requête préparée.
-     */
-    public function getSampleData(string $filterEl): \stdClass
+    public function getDataByMovieName(string $id): array
     {
-        $stmt = $this->getPdo()->prepare("SELECT * from `movies` WHERE col = ?");
-        $stmt->execute([$filterEl]);
-        return $stmt->fetch(\PDO::FETCH_OBJ);
-    }
-
-    public function getMoviesByActors(string $name)
-    {
-        $query = "SELECT * FROM movies WHERE $name = ?";
+        $query = "SELECT * FROM movies WHERE $id = ?";
         $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$actors]);
+        $stmt->execute([$id]);
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     }
+
+
+    // public function getMoviesByActors(string $id)
+    // {
+    //     $query = "SELECT * FROM movies WHERE id = ?";     //jointure à faire avec base actors
+    //     $stmt = SQL::getPdo()->prepare($query);
+    //     $stmt->execute([$id]);
+    //     return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
+    // }
 }
