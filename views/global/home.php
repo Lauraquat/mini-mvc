@@ -13,6 +13,16 @@
                 </ul>
 
                 <div class="text-center">Page générée le <?= $date ?></div>
+                <tr>
+                    <th class="p-2">Id</th>
+                    <th class="p-2">Nom</th>
+                <?php foreach($movie as $client): ?>
+                    <tr> 
+                        <td class="px-2"> <?= $client-> getId() ?></td>
+                        <td class="px-2"> <?= $client-> getName() ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tr>
             </div>
         </div>
     </div>

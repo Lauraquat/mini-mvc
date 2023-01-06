@@ -4,7 +4,7 @@ namespace models\classes;
 
 use models\MoviesModel;
 
-class Adresse
+class Movie
 {
     private string $id;
     private string $name;

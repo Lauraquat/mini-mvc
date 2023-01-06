@@ -9,11 +9,18 @@ class MoviesModel extends SQL
 {
     public function __construct()
     {
-        parent::__construct('movie', 'id');
+        parent::__construct('movie', 'name');
     }
-    
 
-    public function getDataByMovieName(string $id): array
+    public function getMovie()
+    {
+        $query = "SELECT id FROM movies";
+        $stmt = SQL::getPdo()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);  
+    }
+
+    public function getDataByMovieId(string $id): array
     {
         $query = "SELECT * FROM movies WHERE $id = ?";
         $stmt = SQL::getPdo()->prepare($query);
