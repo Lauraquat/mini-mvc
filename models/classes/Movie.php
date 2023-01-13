@@ -6,16 +6,16 @@ use models\MoviesModel;
 
 class Movie
 {
-    private string $id;
-    private string $name;
-    private string $date;
-    private string $img;
-    private string $synopsis;
-    private string $ba;
-    private string $storie;
+    public string $id;
+    public string $name;
+    public string $date;
+    public string $img;
+    public string $synopsis;
+    public string $ba;
+    public string $storie;
 
 
-    private MoviesModel $moviesModel;
+    public MoviesModel $moviesModel;
 
     public function __construct()
     {
