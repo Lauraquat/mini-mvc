@@ -28,25 +28,15 @@ class MoviesController extends WebController
 
         $movies = $this->moviesModel->getMovie();
         
-        // $allMovies = [];
-
-        // foreach($movies as $movie){
-        //     $allMovies[$movie->order] = [
-        //         "name" => $movie->name,
-        //         "date" => $movie->date,
-        //         "img" => $movie->img,
-        //         "synopsis" => $movie->synopsis,
-        //         "ba" => $movie->ba,
-        //         "storie" => $movie->storie
-        //     ];
-        // }
-           
+        foreach($movies as $movie){
+            var_dump($movie->order);
+        }
         // $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
         return Template::render("views/global/movies.php", array("movies" => $movies));
     }
 
 
-    function getOneMovie($order){
+    function getOneMovie(){
         $movies = $this->moviesModel->getMovie();
         
         $allMovies = [];

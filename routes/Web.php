@@ -15,8 +15,7 @@ class Web
         // Appel la méthode « home » dans le contrôleur $main.
         Route::Add('/', [$main, 'home']);
         Route::Add('/movies', [$main, 'getAllMovies']);
-
-        Route::Add('/movie/{order}', [$main, 'getOneMovie']);
+        Route::Add('/movie/order', [$main, 'getOneMovie']);
 
         // Appel la fonction inline dans le routeur.
         // Utile pour du code très simple, où un tes, l'utilisation d'un contrôleur est préférable.
