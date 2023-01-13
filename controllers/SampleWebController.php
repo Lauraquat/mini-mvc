@@ -17,9 +17,11 @@ class SampleWebController extends WebController
 
     function home()
     {
-        $movie = $this->moviesModel->getMovie();
+        $movies = $this->moviesModel->getMovie();
         
-        var_dump($movie);
+        foreach($movies as $movie){
+            var_dump($movie->movies_img);
+        }
 
         $data = $this->moviesModel->getDataByMovieId($movie); // Récupération des TODOS présents en base.
         return Template::render("views/global/home.php", array("data" => $data));

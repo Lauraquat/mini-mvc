@@ -14,7 +14,7 @@ class MoviesModel extends SQL
 
     public function getMovie()
     {
-        $query = "SELECT id FROM movies";
+        $query = "SELECT * FROM movies";
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);  

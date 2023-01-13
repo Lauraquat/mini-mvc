@@ -7,12 +7,12 @@ use models\MoviesModel;
 class Movie
 {
     public string $id;
-    public string $name;
-    public string $date;
-    public string $img;
-    public string $synopsis;
-    public string $ba;
-    public string $storie;
+    public string $movies_name;
+    public string $movies_date;
+    public string $movies_img;
+    public string $movies_synopsis;
+    public string $movies_ba;
+    public string $movies_storie;
 
 
     public MoviesModel $moviesModel;
@@ -24,7 +24,7 @@ class Movie
 
     public function toString(): string
     {
-        return "$this->name, $this->date, $this->img, $this->synopsis, $this->ba, $this->storie";
+        return "$this->movies_name, $this->movies_date, $this->movies_img, $this->movies_synopsis, $this->movies_ba, $this->movies_storie";
     }
 
     /**
@@ -46,97 +46,97 @@ class Movie
     /**
      * @return string
      */
-    public function getName(): string
+    public function getMovies_name(): string
     {
-        return $this->name;
+        return $this->movies_name;
     }
 
     /**
-     * @param string $nom
+     * @param string $movies_name
      */
-    public function setName(string $name): void
+    public function setMovies_name(string $movies_name): void
     {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDate(): string
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param string $date
-     */
-    public function setDate(string $date): void
-    {
-        $this->date = $date;
+        $this->movies_name = $movies_name;
     }
 
     /**
      * @return string
      */
-    public function getimg(): string
+    public function getMovies_date(): string
     {
-        return $this->img;
+        return $this->movies_date;
     }
 
     /**
-     * @param string $img
+     * @param string $movies_date
      */
-    public function setimg(string $img): void
+    public function setMovies_date(string $movies_date): void
     {
-        $this->img = $img;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSynopsis(): string
-    {
-        return $this->synopsis;
-    }
-
-    /**
-     * @param string $synopsis
-     */
-    public function setSynopsis(string $synopsis): void
-    {
-        $this->synopsis = $synopsis;
+        $this->movies_date = $movies_date;
     }
 
     /**
      * @return string
      */
-    public function getBa(): string
+    public function getMovies_img(): string
     {
-        return $this->ba;
+        return $this->movies_img;
     }
 
     /**
-     * @param string $ba
+     * @param string $movies_img
      */
-    public function setBa(string $ba): void
+    public function setMovies_img(string $movies_img): void
     {
-        $this->ba = $ba;
+        $this->movies_img = $movies_img;
     }
 
     /**
      * @return string
      */
-    public function getStorie(): string
+    public function getMovies_synopsis(): string
     {
-        return $this->storie;
+        return $this->movies_synopsis;
     }
 
     /**
-     * @param string $storie
+     * @param string $movies_synopsis
      */
-    public function setStorie(string $storie): void
+    public function setMovies_synopsis(string $movies_synopsis): void
     {
-        $this->storie = $storie;
+        $this->movies_synopsis = $movies_synopsis;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMovies_ba(): string
+    {
+        return $this->movies_ba;
+    }
+
+    /**
+     * @param string $movies_ba
+     */
+    public function setMovies_ba(string $movies_ba): void
+    {
+        $this->movies_ba = $movies_ba;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMovies_storie(): string
+    {
+        return $this->movies_storie;
+    }
+
+    /**
+     * @param string $movies_storie
+     */
+    public function setMovies_storie(string $movies_storie): void
+    {
+        $this->movies_storie = $movies_storie;
     }
 
 }
