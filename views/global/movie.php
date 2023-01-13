@@ -2,7 +2,7 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h2><?= $movies[1]["name"] ?></h2>   
+                <h2><?= $movies[$movies->order]["name"] ?></h2>   
                 <div class="px-2">Film créé en <?= $movies[$movies->order]["date"] ?></div><br/><br/>
                 <div class="px-2"> <img src="<?= $movies[$movies->order]['img'] ?>"></div><br/><br/>
                 <H3>Synopsis</H3>

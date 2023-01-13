@@ -22,27 +22,27 @@ class MoviesController extends WebController
 
     function getAllMovies()
     {
-        $test = "Bonjour";
-        var_dump($test);
-        return Template::render("views/global/movies.php", array("test" => $test));
+        // $test = "Bonjour";
+        // var_dump($test);
+        // return Template::render("views/global/movies.php", array("test" => $test));
 
-        // $movies = $this->moviesModel->getMovie();
+        $movies = $this->moviesModel->getMovie();
         
-        // // $allMovies = [];
+        // $allMovies = [];
 
-        // // foreach($movies as $movie){
-        // //     $allMovies[$movie->order] = [
-        // //         "name" => $movie->name,
-        // //         "date" => $movie->date,
-        // //         "img" => $movie->img,
-        // //         "synopsis" => $movie->synopsis,
-        // //         "ba" => $movie->ba,
-        // //         "storie" => $movie->storie
-        // //     ];
-        // // }
+        // foreach($movies as $movie){
+        //     $allMovies[$movie->order] = [
+        //         "name" => $movie->name,
+        //         "date" => $movie->date,
+        //         "img" => $movie->img,
+        //         "synopsis" => $movie->synopsis,
+        //         "ba" => $movie->ba,
+        //         "storie" => $movie->storie
+        //     ];
+        // }
            
-        // // $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
-        // return Template::render("views/global/movies.php", array("movies" => $movies));
+        // $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
+        return Template::render("views/global/movies.php", array("movies" => $movies));
     }
 
 

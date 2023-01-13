@@ -116,7 +116,7 @@ class Route
 
         // Trouve la route avec le bon pattern (expression régulière avec gestion des paramètres dans l'URL)
         $matches = self::searchForMatchingRoute($target);
-
+var_dump($matches);
         // Est-ce que la page demandée est autorisée.
         if ($matches) {
 
