@@ -19,12 +19,22 @@ class SampleWebController extends WebController
     {
         $movies = $this->moviesModel->getMovie();
         
-        foreach($movies as $movie){
-            var_dump($movie->img);
-        }
+        $allMovies = [];
 
-        $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
-        return Template::render("views/global/home.php", array("data" => $data));
+        foreach($movies as $movie){
+            $allMovies[$movie->order] = [
+                "name" => $movie->name,
+                "date" => $movie->date,
+                "img" => $movie->img,
+                "synopsis" => $movie->synopsis,
+                "ba" => $movie->ba,
+                "storie" => $movie->storie
+            ];
+        }
+        // var_dump($allMovies);
+           
+        // $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
+        return Template::render("views/global/home.php", array("movies" => $allMovies));
     }
 
     function exemple($parametre = 'Valeur par défaut'): string

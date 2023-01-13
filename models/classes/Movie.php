@@ -7,6 +7,7 @@ use models\MoviesModel;
 class Movie
 {
     public int $id;
+    public int $order;
     public string $name;
     public string $date;
     public string $img;
@@ -41,6 +42,22 @@ class Movie
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return 
+     */
+    public function getOrder(): int
+    {
+        return $this->order;
+    }
+
+    /**
+     * @param int $order
+     */
+    public function setOrder(int $order): void
+    {
+        $this->order = $order;
     }
 
     /**
