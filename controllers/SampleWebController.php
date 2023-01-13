@@ -20,10 +20,10 @@ class SampleWebController extends WebController
         $movies = $this->moviesModel->getMovie();
         
         foreach($movies as $movie){
-            var_dump($movie->movies_img);
+            var_dump($movie->img);
         }
 
-        $data = $this->moviesModel->getDataByMovieId($movie); // Récupération des TODOS présents en base.
+        $data = $this->moviesModel->getDataByMovieId($movie->id); // Récupération des TODOS présents en base.
         return Template::render("views/global/home.php", array("data" => $data));
     }
 

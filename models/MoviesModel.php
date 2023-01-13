@@ -20,16 +20,16 @@ class MoviesModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);  
     }
 
-    public function getDataByMovieId(string $id): array
+    public function getDataByMovieId($id): array
     {
-        $query = "SELECT * FROM movies WHERE $id = ?";
+        $query = "SELECT * FROM movies WHERE id = ?";
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute([$id]);
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     }
 
 
-    // public function getMoviesByActors(string $id)
+    // public function getMoviesByActors($id)
     // {
     //     $query = "SELECT * FROM movies WHERE id = ?";     //jointure à faire avec base actors
     //     $stmt = SQL::getPdo()->prepare($query);

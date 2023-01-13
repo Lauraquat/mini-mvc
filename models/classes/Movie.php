@@ -6,7 +6,7 @@ use models\MoviesModel;
 
 class Movie
 {
-    public string $id;
+    public int $id;
     public string $name;
     public string $date;
     public string $img;
@@ -28,17 +28,17 @@ class Movie
     }
 
     /**
-     * @return string
+     * @return 
      */
-    public function getId(): string
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param string $id
+     * @param int $id
      */
-    public function setId(string $id): void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
@@ -60,7 +60,7 @@ class Movie
     }
 
     /**
-     * @return string
+     * @return 
      */
     public function getDate(): string
     {
@@ -68,7 +68,7 @@ class Movie
     }
 
     /**
-     * @param string $date
+     * @param $date
      */
     public function setDate(string $date): void
     {
