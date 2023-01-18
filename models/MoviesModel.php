@@ -12,7 +12,7 @@ class MoviesModel extends SQL
         parent::__construct('movie', 'name');
     }
 
-    public function getMovie()
+    public function getMovies()
     {
         $query = "SELECT * FROM movies";
         $stmt = SQL::getPdo()->prepare($query);
@@ -20,11 +20,11 @@ class MoviesModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);  
     }
 
-    public function getDataByMovieId($order): array
+    public function getMovieByOrder($order): array
     {
-        $query = "SELECT * FROM movies WHERE order = ?";
+        $query = "SELECT * FROM movies WHERE order =" . $order;
         $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$order]);
+        $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     }
 

@@ -2,7 +2,8 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h2><?= $movies[3]["name"] ?></h2>   
+                <h2>NAME : <?= $movie->name ?></h2>   
+                <h2>AUTRE<?= $movies[3]["name"] ?></h2>   
                 <div class="px-2">Film créé en <?= $movies[3]["date"] ?></div><br/><br/>
                 <div class="px-2"> <img src="<?= $movies[3]['img'] ?>"></div><br/><br/>
                 <H3>Synopsis</H3>
