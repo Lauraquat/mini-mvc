@@ -7,13 +7,13 @@ use models\MoviesModel;
 class Movie
 {
     public int $id;
-    public int $order;
+    public int $orders;
     public string $name;
     public string $date;
     public string $img;
     public string $synopsis;
     public string $ba;
-    public string $storie;
+    public string $story;
 
 
     public MoviesModel $moviesModel;
@@ -25,7 +25,7 @@ class Movie
 
     public function toString(): string
     {
-        return "$this->name, $this->date, $this->img, $this->synopsis, $this->ba, $this->storie";
+        return "$this->name, $this->date, $this->img, $this->synopsis, $this->ba, $this->story";
     }
 
     /**
@@ -47,17 +47,17 @@ class Movie
     /**
      * @return 
      */
-    public function getOrder(): int
+    public function getOrders(): int
     {
-        return $this->order;
+        return $this->orders;
     }
 
     /**
-     * @param int $order
+     * @param int $orders
      */
-    public function setOrder(int $order): void
+    public function setOrder(int $orders): void
     {
-        $this->order = $order;
+        $this->orders = $orders;
     }
 
     /**
@@ -143,17 +143,17 @@ class Movie
     /**
      * @return string
      */
-    public function getStorie(): string
+    public function getStory(): string
     {
-        return $this->storie;
+        return $this->story;
     }
 
     /**
-     * @param string $storie
+     * @param string $story
      */
-    public function setStorie(string $storie): void
+    public function setStory(string $story): void
     {
-        $this->storie = $storie;
+        $this->story = $story;
     }
 
 }

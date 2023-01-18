@@ -20,20 +20,20 @@ class MoviesModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);  
     }
 
-    public function getMovieByOrder($order): array
+    public function getMovieByOrders($orders): Movie
     {
-        $query = "SELECT * FROM movies WHERE order =" . $order;
+        $query = "SELECT * FROM movies WHERE orders =" . $orders;
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
+        return $stmt->fetchObject(Movie::class);
     }
 
 
-    public function getActorsByMovies($order)
+    public function getActorsByMovies($orders)
     {
-        $query = "SELECT * FROM movies WHERE order = ?";     //jointure à faire avec base actors
+        $query = "SELECT * FROM movies WHERE orders = ?";     //jointure à faire avec base actors
         $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$order]);
+        $stmt->execute([$orders]);
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     }
 }
