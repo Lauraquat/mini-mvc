@@ -3,6 +3,7 @@
 namespace models\classes;
 
 use models\ActorsModel;
+use models\ImagesModel;
 
 
 class Movie
@@ -16,16 +17,23 @@ class Movie
     public string $ba;
     public string $story;
     public ActorsModel $actorsModel;
+    public ImagesModel $imagesModel;
 
 
     public function __construct()
     {
         $this->actorsModel = new ActorsModel();
+        $this->imagesModel = new ImagesModel();
     }
 
 
     public function listOfActors(): array {
         return $this->actorsModel->getActorsByMovie($this->id);
+    }
+    
+    
+    public function imagesOfMovie(): array {
+        return $this->imagesModel->getImagesByMovie($this->id);
     }
 
 

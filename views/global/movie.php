@@ -21,6 +21,12 @@
                     <p>Interprété par : <?= $actor->getName()?></p>
                     <img width="20%" src="<?= $actor->getPhoto()?>"></img>
                 <?php endforeach; ?>
+
+                <h3>Galerie</h3>
+                <?php foreach($images as $image):?>
+                    <img width="20%" src="<?= $image->getImage()?>"></img>
+                <?php endforeach; ?>
+
             </div>
         </div>
     </div>

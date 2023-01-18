@@ -2,7 +2,6 @@
 namespace models\classes;
 
 use models\ActorsModel;
-use models\base\MoviesModel;
 
 class Actors
 {

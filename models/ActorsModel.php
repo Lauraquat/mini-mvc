@@ -9,7 +9,6 @@ class ActorsModel extends SQL
 {
     public function __construct()
     {
-        parent::__construct('actor', 'name');
     }
 
 
