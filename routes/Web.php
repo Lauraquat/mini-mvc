@@ -3,6 +3,7 @@
 namespace routes;
 
 use controllers\MoviesController;
+use controllers\GalleryController;
 use routes\base\Route;
 use utils\Template;
 
@@ -16,6 +17,14 @@ class Web
         Route::Add('/', [$main, 'home']);
         Route::Add('/movies', [$main, 'getAllMovies']);
         Route::Add('/movie/{orders}', [$main, 'getOneMovie']);
+
+
+        $gallery = new GalleryController();
+        
+        // Appel des méthodes dans le contrôleur $gallery.
+        Route::Add('/gallery', [$gallery, 'getAllImages']);
+
+
 
         // Appel la fonction inline dans le routeur.
         // Utile pour du code très simple, où un tes, l'utilisation d'un contrôleur est préférable.

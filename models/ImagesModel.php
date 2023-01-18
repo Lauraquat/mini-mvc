@@ -14,7 +14,7 @@ class ImagesModel extends SQL
 
     public function getAllImages()
     {
-        $query = "SELECT * FROM images";
+        $query = "SELECT * FROM movies_images";
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Images::class);
