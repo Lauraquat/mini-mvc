@@ -2,7 +2,8 @@
 
 namespace models\classes;
 
-use models\MoviesModel;
+use models\ActorsModel;
+
 
 class Movie
 {
@@ -14,14 +15,19 @@ class Movie
     public string $synopsis;
     public string $ba;
     public string $story;
+    public ActorsModel $actorsModel;
 
-
-    public MoviesModel $moviesModel;
 
     public function __construct()
     {
-        $this->moviesModel = new MoviesModel();
+        $this->actorsModel = new ActorsModel();
     }
+
+
+    public function listOfActors(): array {
+        return $this->actorsModel->getActorsByMovie($this->id);
+    }
+
 
     public function toString(): string
     {

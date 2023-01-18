@@ -27,13 +27,4 @@ class MoviesModel extends SQL
         $stmt->execute();
         return $stmt->fetchObject(Movie::class);
     }
-
-
-    public function getActorsByMovies($orders)
-    {
-        $query = "SELECT * FROM movies WHERE orders = ?";     //jointure à faire avec base actors
-        $stmt = SQL::getPdo()->prepare($query);
-        $stmt->execute([$orders]);
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
-    }
 }
