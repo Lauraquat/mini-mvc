@@ -2,8 +2,9 @@
 
 namespace routes;
 
-use controllers\MoviesController;
+use controllers\ActorsController;
 use controllers\GalleryController;
+use controllers\MoviesController;
 use routes\base\Route;
 use utils\Template;
 
@@ -11,18 +12,24 @@ class Web
 {
     function __construct()
     {
-        $main = new MoviesController();
+        $movies = new MoviesController();
 
-        // Appel des méthodes dans le contrôleur $main.
-        Route::Add('/', [$main, 'home']);
-        Route::Add('/movies', [$main, 'getAllMovies']);
-        Route::Add('/movie/{orders}', [$main, 'getOneMovie']);
+        // Appel des méthodes dans le contrôleur $movies.
+        Route::Add('/', [$movies, 'home']);
+        Route::Add('/movies', [$movies, 'getAllMovies']);
+        Route::Add('/movie/{orders}', [$movies, 'getOneMovie']);
 
 
         $gallery = new GalleryController();
         
         // Appel des méthodes dans le contrôleur $gallery.
         Route::Add('/gallery', [$gallery, 'getAllImages']);
+        
+        
+        $actors = new ActorsController();
+        
+        // Appel des méthodes dans le contrôleur $actors.
+        Route::Add('/actors', [$actors, 'getAllMoviesByActor']);
 
 
 

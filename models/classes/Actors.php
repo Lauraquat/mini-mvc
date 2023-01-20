@@ -1,8 +1,6 @@
 <?php
 namespace models\classes;
 
-use models\ActorsModel;
-
 class Actors
 {
     private int $id;
