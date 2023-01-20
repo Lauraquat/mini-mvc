@@ -39,13 +39,14 @@ class MoviesController extends WebController
 
     public function getOneMovie($orders){
         $movie = $this->moviesModel->getMovieByOrders($orders);
-        $actors = $this->actorsModel->getActorsByMovie($movie->getId());
         $images = $this->imagesModel->getImagesByMovie($movie->getId());
+        $actors = $this->actorsModel->getActors();
+
         
         return Template::render("views/global/movie.php", array(
             "movie" => $movie,
-            "actors" => $actors,
             "images" => $images,
+            "actors" => $actors
         ));
     }
 }

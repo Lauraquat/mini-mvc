@@ -23,8 +23,7 @@ class ActorsController extends WebController
         $actors = $this->actorsModel->getActors();
         $movies = $this->moviesModel->getMovies();
         $moviesActors = $this->moviesModel->getMoviesByActor();
-        
-           
+                  
         return Template::render("views/global/listActors.php", array(
             "actors" => $actors,
             "movies" => $movies,
