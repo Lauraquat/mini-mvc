@@ -32,11 +32,20 @@ class Web
         Route::Add('/actors', [$actors, 'getAllMoviesByActor']);
 
 
+        // Route vers la page d'inscription
+        Route::Add('/register', function () {
+            return Template::render('views/common/register.php');
+        });
 
-        // Appel la fonction inline dans le routeur.
-        // Utile pour du code très simple, où un tes, l'utilisation d'un contrôleur est préférable.
-        Route::Add('/about', function () {
-            return Template::render('views/global/about.php');
+        //Route vers la page login
+        Route::Add('/login', function () {
+            return Template::render('views/common/login.php');
+        });
+
+
+        //Route vers la page logout
+        Route::Add('/logout', function () {
+            return Template::render('views/common/logout.php');
         });
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
