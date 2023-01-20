@@ -2,6 +2,7 @@
 
 namespace routes;
 
+use controllers\AccountController;
 use controllers\ActorsController;
 use controllers\GalleryController;
 use controllers\MoviesController;
@@ -32,12 +33,13 @@ class Web
         Route::Add('/actors', [$actors, 'getAllMoviesByActor']);
 
 
+        $account = new AccountController();
+        Route::Add('/login', [$account, 'login']);
+        Route::Add('/login/run', [$account, 'login_run']);
+        Route::Add('/logout', [$account, 'logout']);
+        Route::Add('/register', [$account, 'register']);
+        Route::Add('/register/run', [$account, 'register_run']);
 
-        // Appel la fonction inline dans le routeur.
-        // Utile pour du code très simple, où un tes, l'utilisation d'un contrôleur est préférable.
-        Route::Add('/about', function () {
-            return Template::render('views/global/about.php');
-        });
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {

@@ -39,6 +39,7 @@ class MoviesController extends WebController
 
     public function getOneMovie($orders){
         $movie = $this->moviesModel->getMovieByOrders($orders);
+        $actors = $this->actorsModel->getActors();
         $images = $this->imagesModel->getImagesByMovie($movie->getId());
         $actors = $this->actorsModel->getActors();
 

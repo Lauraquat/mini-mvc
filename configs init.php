@@ -12,5 +12,14 @@ return array(
     "DB_DSN" => "mysql:host=$DB_SERVER;dbname=$DB_DATABASE;charset=utf8",
     "DEBUG" => $DEBUG
 );
+ 
+// Connexion à la base de données MySQL 
+$conn = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASSWORD, $DB_NAME);
+ 
+// Vérifier la connexion
+if($conn === false){
+    die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
+}
+?>
 
 //A copier et renommer "configs.php" et remplir les $DB_DATABASE, $DB_USER, $DB_PASSWORD
