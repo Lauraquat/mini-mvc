@@ -3,6 +3,7 @@
 namespace models;
 
 use models\base\SQL;
+use models\classes\Comments;
 use models\classes\Movie;
 
 class MoviesModel extends SQL
@@ -34,5 +35,6 @@ class MoviesModel extends SQL
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
-    }
+    }   
+
 }

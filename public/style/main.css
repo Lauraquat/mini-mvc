@@ -46,7 +46,7 @@ ul{
 
 #menu{
   position: absolute;
-  top: 6rem;
+  top: 12vh;
   right: 0;
   display: none;
   width: 100%;
@@ -151,4 +151,47 @@ ul{
 }
 .btnenplus:hover{
   background-color: rgb(55, 55, 55);
+}
+#section-actors{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+.actor-card{
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+  text-align: center;
+}
+.img-actor{
+  height: 13rem;
+  background-position: top center;
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.actor-card p{
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#section-gallery{
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.img-gallery{
+  height: 16rem;
+  width: 23rem;
+  background-size: cover;
+  background-position: center;
 }

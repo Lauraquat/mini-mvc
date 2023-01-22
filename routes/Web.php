@@ -20,7 +20,6 @@ class Web
         Route::Add('/movies', [$movies, 'getAllMovies']);
         Route::Add('/movie/{orders}', [$movies, 'getOneMovie']);
 
-
         $gallery = new GalleryController();
         
         // Appel des méthodes dans le contrôleur $gallery.
@@ -39,6 +38,7 @@ class Web
         Route::Add('/logout', [$account, 'logout']);
         Route::Add('/register', [$account, 'register']);
         Route::Add('/register/run', [$account, 'register_run']);
+
 
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.

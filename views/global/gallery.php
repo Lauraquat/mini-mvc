@@ -1,3 +1,5 @@
-<?php foreach($images as $image):?>
-    <img width="20%" src="<?= $image->getImage()?>"></img>
-<?php endforeach; ?>
+<section id="section-gallery">
+    <?php foreach($images as $image):?>
+        <div class="img-gallery" style="background-image:url(<?= $image->getImage()?>)"></div>
+    <?php endforeach; ?>
+</section>

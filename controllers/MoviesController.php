@@ -6,6 +6,7 @@ use controllers\base\WebController;
 use models\ActorsModel;
 use models\ImagesModel;
 use models\MoviesModel;
+use models\CommentsModel;
 use utils\Template;
 
 class MoviesController extends WebController
@@ -13,12 +14,14 @@ class MoviesController extends WebController
     private $actorsModel;
     private $imagesModel;
     private $moviesModel;
+    private $commentsModel;
     
     public function __construct()
     {
         $this->actorsModel = new ActorsModel();
         $this->imagesModel = new ImagesModel();
         $this->moviesModel = new MoviesModel();
+        $this->commentsModel = new CommentsModel();
     }
     
     public function home(){
@@ -41,13 +44,16 @@ class MoviesController extends WebController
         $movie = $this->moviesModel->getMovieByOrders($orders);
         $actors = $this->actorsModel->getActors();
         $images = $this->imagesModel->getImagesByMovie($movie->getId());
-        $actors = $this->actorsModel->getActors();
+        $comments = $this->commentsModel->getCommentsByMovie($movie->getId());
 
         
         return Template::render("views/global/movie.php", array(
             "movie" => $movie,
             "images" => $images,
-            "actors" => $actors
+            "actors" => $actors,
+            "comments" => $comments,
         ));
     }
+    
+
 }
