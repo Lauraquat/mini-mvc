@@ -4,6 +4,8 @@ namespace models\classes;
 class Comments
 {
     private int $id;
+    private int $movies_id;
+    private int $users_id;
     private string $commentaires;
     private string $comments_date;
 
@@ -25,6 +27,40 @@ class Comments
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+
+    
+    /**
+     * @return int
+     */
+    public function getMovies_id(): string
+    {
+        return $this->movies_id;
+    }
+
+    /**
+     * @param int $movies_id
+     */
+    public function setMovies_id(int $movies_id): void
+    {
+        $this->movies_id = $movies_id;
+    }
+
+    
+    /**
+     * @return int
+     */
+    public function getUsers_id(): string
+    {
+        return $this->users_id;
+    }
+
+    /**
+     * @param int $users_id
+     */
+    public function setUsers_id(int $users_id): void
+    {
+        $this->users_id = $users_id;
     }
 
     /**

@@ -13,3 +13,8 @@ function closemenu(){
     document.getElementById('menu-button').style.display = "block";
     document.getElementById('menu').style.display = "none";
 }
+
+function openForm(){
+    document.getElementById('forms').style.display = "flex";
+    document.querySelector('.linkadd').style.display = "none"; 
+}

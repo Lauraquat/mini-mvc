@@ -28,4 +28,13 @@ class ActorsModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Actors::class);
     }
 
+    
+    function add($name, $pseudo, $photo)
+    {
+        $stmt = $this->getPdo()->prepare("INSERT INTO actors (`name`, `pseudo`, `photo`) VALUES (?, ?, ?)");
+        $stmt->execute([$name, $pseudo, $photo]);
+        $stmt->fetch();
+        return $this->getPdo()->lastInsertId();
+    } 
+
 }

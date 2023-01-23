@@ -55,5 +55,19 @@ class MoviesController extends WebController
         ));
     }
     
+    function add($add ,$orders, $name, $date, $img, $synopsis, $ba, $story) {
+        if (isset($add)) {
+
+            if ($date == "") {
+                echo "Impossible d'ajouter sans une date valide";
+            } else {
+                $movies =  $this->moviesModel->add($orders, $name, $date, $img, $synopsis, $ba, $story);
+            }
+        }
+
+        return Template::render("/movies.php", array(
+            "movies" => $movies,
+        ));
+    }
 
 }

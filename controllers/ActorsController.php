@@ -30,4 +30,24 @@ class ActorsController extends WebController
             "moviesActors" => $moviesActors
         ));
     }
+    
+    function add($add) {
+        if ($add) {        
+            $formData = $_POST;
+            $movieSelected = [];
+            
+            foreach($formData as $key => $data) {
+                if ($key == "name" || $key == "pseudo" || $key == "photo" || $key == "add") {
+                    
+                } else {
+                    $movieSelected[$key] = $data;
+                }
+            }
+
+        } else {
+            $movies = $this->moviesModel->getAll();
+            return Template::render("views/addActor.php", ["movies" => $movies]);
+        }
+    }
+
 }

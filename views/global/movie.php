@@ -33,13 +33,15 @@
                     <h4><?= $comment->getCommentaires()?></h4>
                     <p>Ecrit le<?= $comment->getCommentsDate()?></p>
                 <?php endforeach; ?>
-<!-- 
-                <form action="./addCom" method="post">
+
+                <!-- <form action="./add" method="post">
                     <div>
-                        <input id="texte" name="texte" type="text" class="form-control" placeholder="Ajouter un commentaire" aria-label="My new idea" aria-describedby="basic-addon1" />
-                        <input type="button" value="Valider">
+                        <textarea id="texte" name="message"></textarea>
+                        <input type="hidden" name="movie_id" value=<?= $movie->id ?> />
+                        <input type="submit" value="Valider">
                     </div>
                 </form> -->
+
             </div>
         </div>
     </div>
