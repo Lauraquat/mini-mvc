@@ -34,12 +34,13 @@
         <h3>Commentaires</h3>
         <?php foreach($comments as $comment):?>
             <h4><?= $comment->getCommentaires()?></h4>
-            <p>Ecrit le<?= $comment->getCommentsDate()?></p>
+            <p>Ecrit le "<?= $comment->getCommentsDate()?>"</p>
         <?php endforeach; ?>
 
-        <form action="addCom">
+        <form action="addCom" method="POST">
             <textarea id="texte" name="message"></textarea>
-            <input type="hidden" name="movie_id" value=<?= $movie->id ?> />
+            <input type="hidden" name="movies_id" value="<?= $movie->id ?>"/>
+            <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s')?>" />
             <input type="submit" name="addCom" value="Valider">
         </form>
 </div>
