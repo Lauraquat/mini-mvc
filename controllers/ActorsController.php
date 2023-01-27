@@ -31,23 +31,21 @@ class ActorsController extends WebController
         ));
     }
     
-    function add($add) {
-        if ($add) {        
-            $formData = $_POST;
-            $movieSelected = [];
-            
-            foreach($formData as $key => $data) {
-                if ($key == "name" || $key == "pseudo" || $key == "photo" || $key == "add") {
-                    
-                } else {
-                    $movieSelected[$key] = $data;
-                }
-            }
+    function addActor($addActor, $name, $pseudo, $photo) {
+        if (isset($addActor)) {
+            $actor =  $this->actorsModel->addActor($name, $pseudo, $photo);
+        } 
+        
+        $actors = $this->actorsModel->getActors();
+        $movies = $this->moviesModel->getMovies();
+        $moviesActors = $this->moviesModel->getMoviesByActor();
 
-        } else {
-            $movies = $this->moviesModel->getAll();
-            return Template::render("views/addActor.php", ["movies" => $movies]);
-        }
+        return Template::render("views/global/listActors.php", array(
+            "actors" => $actors,
+            "actor" => $actor,
+            "movies" => $movies,
+            "moviesActors" => $moviesActors
+        ));
     }
 
 }

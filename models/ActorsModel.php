@@ -29,7 +29,7 @@ class ActorsModel extends SQL
     }
 
     
-    function add($name, $pseudo, $photo)
+    function addActor($name, $pseudo, $photo)
     {
         $stmt = $this->getPdo()->prepare("INSERT INTO actors (`name`, `pseudo`, `photo`) VALUES (?, ?, ?)");
         $stmt->execute([$name, $pseudo, $photo]);

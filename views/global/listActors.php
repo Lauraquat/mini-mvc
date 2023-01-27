@@ -1,13 +1,13 @@
-<section id="section-actors">
-    <a href="/addActor" id="linkaddactor">Ajouter un acteur</a>
+<button class="linkadd" onclick="openForm()">Ajouter un acteur</button>
 
-<form action="post" class="forms">
-    <h2>Ajouter un acteur</h2>
-    <input type="text" name="name" placeholder="Nom de l'acteur" id="">
-    <input type="text" name="pseudo" placeholder="Nom dans le film" id="">
-    <input type="text" name="photo" placeholder="Lien de l'image" id="">
-    <input type="submit" name="add" value="Ajouter" />
-</form>
+<section id="section-actors">
+    <form action="addActor" id="forms">
+        <h2>Ajouter un acteur</h2>
+        <input type="text" name="name" placeholder="Nom de l'acteur">
+        <input type="text" name="pseudo" placeholder="Pseudo">
+        <input type="text" name="photo" placeholder="Lien de l'image">
+        <input type="submit" name="addActor" value="Ajouter" />
+    </form>
 
     <?php foreach($actors as $actor): ?>
         <div class="actor-card">
