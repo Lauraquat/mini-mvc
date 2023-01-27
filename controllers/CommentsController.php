@@ -15,7 +15,4 @@ class CommentsController extends WebController
         $this->commentsModel = new CommentsModel();
     }
     
-   
-
-
 }

@@ -18,7 +18,6 @@ class CommentsModel extends SQL
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Comments::class);  
     }
-
     
     public function getCommentsByMovie($id)
     {
@@ -26,6 +25,13 @@ class CommentsModel extends SQL
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Comments::class);
+    }
+
+    public function addCom($movies_id, $users_id, $commentaires, $comments_date){
+        $stmt = $this->getPdo()->prepare("INSERT INTO comments (`movies_id`, `users_id`, `commentaires`, `comments_date`) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$movies_id, $users_id, $commentaires, $comments_date]);
+        $stmt->fetch();
+        return $this->getPdo()->lastInsertId();
     }
 
 }
