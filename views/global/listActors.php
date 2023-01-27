@@ -1,7 +1,7 @@
 <section id="section-actors">
     <a href="/addActor" id="linkaddactor">Ajouter un acteur</a>
 
-<form action="post" action="#" class="forms">
+<form action="post" class="forms">
     <h2>Ajouter un acteur</h2>
     <input type="text" name="name" placeholder="Nom de l'acteur" id="">
     <input type="text" name="pseudo" placeholder="Nom dans le film" id="">

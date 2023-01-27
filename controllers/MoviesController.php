@@ -42,7 +42,10 @@ class MoviesController extends WebController
 
     public function getOneMovie($orders){
         $movie = $this->moviesModel->getMovieByOrders($orders);
-        $actors = $this->actorsModel->getActors();
+        // $actors = $this->actorsModel->getActors();
+        $actors = $this->actorsModel->getActorsByMovie($movie->getId());
+
+        echo '<pre>' , var_dump($movie->getId()) , '</pre>';
         $images = $this->imagesModel->getImagesByMovie($movie->getId());
         $comments = $this->commentsModel->getCommentsByMovie($movie->getId());
 

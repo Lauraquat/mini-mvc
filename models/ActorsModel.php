@@ -22,7 +22,7 @@ class ActorsModel extends SQL
     
     public function getActorsByMovie($id)
     {
-        $query = "SELECT actors.* FROM movies, actors INNER JOIN movies_actors ON movies_actors.actors_id = actors.id WHERE movies.id =" . $id;
+        $query = "SELECT a.* FROM actors a WHERE a.id IN (SELECT actors_id FROM movies_actors WHERE movies_id =" . $id .")";
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Actors::class);
