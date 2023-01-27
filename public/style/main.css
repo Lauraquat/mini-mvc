@@ -255,3 +255,29 @@ input[type=text], input[type=number], input[type=textarea]{
 .xdebug-error.xe-warning tbody{
   color: #111;
 }
+
+.block-single-movie{
+  padding: 2rem;
+}
+
+.movie-galerie{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.movie-galerie img{
+max-height: 7rem;
+}
+
+.movie-acteur-block{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.movie-acteur{
+  display: flex;
+  flex-direction: column;
+}

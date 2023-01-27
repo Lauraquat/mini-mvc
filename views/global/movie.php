@@ -1,48 +1,45 @@
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="card">
-            <div class="card-body">
-                <h2><?= $movie->getName() ?></h2>   
-                <div class="px-2">Film créé en <?= $movie->getDate() ?></div><br/><br/>
-                <div class="px-2"> <img width="20%" src="<?= $movie->getImg() ?>"></div><br/><br/>
-                
-                <H3>Synopsis</H3>
-                <div class="px-2"> <?= $movie->getSynopsis() ?></div><br/><br/>
-                
-                <H3>Bande Annonce</H3>
-                <iframe width="420" height="345" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe><br/><br/>
-                
-                <H3>Story</H3>
-                <div class="px-2"> <?= $movie->getStory() ?></div><br/>
-                            
-                <h3>Acteurs</h3>
-                <?php foreach($actors as $actor):?>
+<div class="block-single-movie">
+        <h2><?= $movie->getName() ?></h2>   
+        <div class="">Film créé en <?= $movie->getDate() ?></div>
+        <div class=""> <img width="20%" src="<?= $movie->getImg() ?>"></div>
+        
+        <h3>Synopsis</h3>
+        <div class=""> <?= $movie->getSynopsis() ?></div>
+        
+        <h3>Bande Annonce</h3>
+        <iframe width="420" height="345" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe><br/><br/>
+        
+        <h3>Story</h3>
+        <div class=""><?= $movie->getStory() ?></div>
+                    
+        <h3>Acteurs</h3>
+        <div class="movie-acteur-block">
+            <?php foreach($actors as $actor):?>
+                <div class="actor-card">
                     <h4><?= $actor->getPseudo()?></h4>
                     <p>Interprété par : <?= $actor->getName()?></p>
-                    <img width="20%" src="<?= $actor->getPhoto()?>"></img>
-                <?php endforeach; ?>
-                    
-                <h3>Galerie</h3>
-                <?php foreach($images as $image):?>
-                    <img width="20%" src="<?= $image->getImage()?>"></img>
-                <?php endforeach; ?>
-                
-                <h3>Commentaires</h3>
-                <?php foreach($comments as $comment):?>
-                    <h4><?= $comment->getCommentaires()?></h4>
-                    <p>Ecrit le<?= $comment->getCommentsDate()?></p>
-                <?php endforeach; ?>
-
-                <!-- <form action="./add" method="post">
-                    <div>
-                        <textarea id="texte" name="message"></textarea>
-                        <input type="hidden" name="movie_id" value=<?= $movie->id ?> />
-                        <input type="submit" value="Valider">
-                    </div>
-                </form> -->
-
-            </div>
+                    <img width="" src="<?= $actor->getPhoto()?>"></img>
+                </div>
+            <?php endforeach; ?>
         </div>
-    </div>
+            
+        <h3>Galerie</h3>
+        <div class="movie-galerie">
+            <?php foreach($images as $image):?>
+                <img width="" src="<?= $image->getImage()?>"></img>
+            <?php endforeach; ?>
+        </div>
+        
+        <h3>Commentaires</h3>
+        <?php foreach($comments as $comment):?>
+            <h4><?= $comment->getCommentaires()?></h4>
+            <p>Ecrit le<?= $comment->getCommentsDate()?></p>
+        <?php endforeach; ?>
+
+        <form action="addCom">
+            <textarea id="texte" name="message"></textarea>
+            <input type="hidden" name="movie_id" value=<?= $movie->id ?> />
+            <input type="submit" name="addCom" value="Valider">
+        </form>
 </div>
