@@ -19,7 +19,7 @@ class Web
         Route::Add('/', [$movies, 'home']);
         Route::Add('/movies', [$movies, 'getAllMovies']);
         Route::Add('/movie/{orders}', [$movies, 'getOneMovie']);
-        Route::Add('/movies/add', [$movies, 'add']);
+        Route::Add('/add', [$movies, 'add']);
 
 
         $gallery = new GalleryController();
@@ -32,7 +32,7 @@ class Web
         
         // Appel des méthodes dans le contrôleur $actors.
         Route::Add('/actors', [$actors, 'getAllMoviesByActor']);
-        Route::Add("/actors/add", [$actors, "add"]);
+        Route::Add("/addActor", [$actors, "addActor"]);
 
 
 

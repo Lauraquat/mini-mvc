@@ -65,7 +65,8 @@ class MoviesController extends WebController
             }
         }
 
-        return Template::render("/movies.php", array(
+        $movies = $this->moviesModel->getMovies();
+        return Template::render("views/global/movies.php", array(
             "movies" => $movies,
         ));
     }

@@ -252,3 +252,6 @@ input[type=text], input[type=number], input[type=textarea]{
   border: none;
 }
 
+.xdebug-error.xe-warning tbody{
+  color: #111;
+}
