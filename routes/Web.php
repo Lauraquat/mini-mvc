@@ -7,7 +7,7 @@ use controllers\ActorsController;
 use controllers\GalleryController;
 use controllers\MoviesController;
 use routes\base\Route;
-use utils\Template;
+use utils\SessionHelpers;
 
 class Web
 {
@@ -45,10 +45,10 @@ class Web
 
 
 
-        //        Exemple de limitation d'accès à une page en fonction de la SESSION.
-        //        if (SessionHelpers::isLogin()) {
-        //            Route::Add('/logout', [$main, 'home']);
-        //        }
+        //Exemple de limitation d'accès à une page en fonction de la SESSION.
+        if (SessionHelpers::isLogin()) {
+            Route::Add('/logout', [$account, 'home']);
+        }
     }
 }
 

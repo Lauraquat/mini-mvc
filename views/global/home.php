@@ -1,13 +1,12 @@
 <?php
-  // Initialiser la session
-  session_start();
-  // Vérifiez si l'utilisateur est connecté, sinon redirige vers la page de connexion
+// Initialiser la session
+session_start();
+// Vérifiez si l'utilisateur est connecté, sinon redirige vers la page de connexion
   if(!isset($_SESSION["username"])){
     header("Location: /login");
     exit(); 
   }
 ?>
-<?php require ('./common/header.php') ?>
 
     <div class="sucess">
     <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>

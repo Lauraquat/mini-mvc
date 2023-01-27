@@ -43,7 +43,8 @@ class AccountController extends WebController
     function logout()
     {
         SessionHelpers::logout();
-        header('location: ../');
+        session_destroy();
+        header('location: /login');
         exit();
     }
 
