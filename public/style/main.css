@@ -57,6 +57,7 @@ ul{
   display: none;
   width: 100%;
   margin: 0;
+  z-index: 1;
 }
 #menu.show-menu{
   transform:translateY(51px);
@@ -85,6 +86,7 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
+  border: #111 solid 2px;
 }
 #menu ul li:hover {
   background-color: rgb(41, 41, 41);
