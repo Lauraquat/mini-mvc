@@ -27,9 +27,10 @@ class CommentsModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Comments::class);
     }
 
-    public function addCom($movies_id, $users_id, $commentaires, $comments_date){
-        $stmt = $this->getPdo()->prepare("INSERT INTO comments (`movies_id`, `users_id`, `commentaires`, `comments_date`) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$movies_id, $users_id, $commentaires, $comments_date]);
+    public function addCom($movies_id, $commentaires, $comments_date)
+    {
+        $stmt = $this->getPdo()->prepare("INSERT INTO comments (`movies_id`, `commentaires`, `comments_date`) VALUES (?, ?, ?)");
+        $stmt->execute([$movies_id, $commentaires, $comments_date]);
         $stmt->fetch();
         return $this->getPdo()->lastInsertId();
     }

@@ -6,13 +6,20 @@ use controllers\AccountController;
 use controllers\ActorsController;
 use controllers\GalleryController;
 use controllers\MoviesController;
+use controllers\CommentsController;
 use routes\base\Route;
-use utils\Template;
+use utils\SessionHelpers;
 
 class Web
 {
     function __construct()
     {
+
+        $comments = new CommentsController();
+
+        //Appel des méthodes pour les commentaires
+        Route::Add('/movie/addCom', [$comments, 'addCom']);
+
         $movies = new MoviesController();
 
         // Appel des méthodes dans le contrôleur $movies.
@@ -20,6 +27,12 @@ class Web
         Route::Add('/movies', [$movies, 'getAllMovies']);
         Route::Add('/movie/{orders}', [$movies, 'getOneMovie']);
         Route::Add('/add', [$movies, 'add']);
+        
+
+
+        
+
+
 
 
         $gallery = new GalleryController();
@@ -45,10 +58,10 @@ class Web
 
 
 
-        //        Exemple de limitation d'accès à une page en fonction de la SESSION.
-        //        if (SessionHelpers::isLogin()) {
-        //            Route::Add('/logout', [$main, 'home']);
-        //        }
+        //Exemple de limitation d'accès à une page en fonction de la SESSION.
+        if (SessionHelpers::isLogin()) {
+            Route::Add('/logout', [$account, 'home']);
+        }
     }
 }
 
