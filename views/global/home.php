@@ -15,7 +15,4 @@ session_start();
     </div>
 
 
-
-
-
 <?php require ('./common/footer.php') ?>

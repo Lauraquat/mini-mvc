@@ -35,6 +35,10 @@ class ActorsModel extends SQL
         $stmt->execute([$name, $pseudo, $photo]);
         $stmt->fetch();
         return $this->getPdo()->lastInsertId();
-    } 
+    }
+
+    function saveActorMovies($movie_id, $actors_id){
+        //Insérer dans table movies_actors avec un foreach par movie dans controller
+    }
 
 }

@@ -34,7 +34,11 @@ class ActorsController extends WebController
     function addActor($addActor, $name, $pseudo, $photo) {
         if (isset($addActor)) {
             $actor =  $this->actorsModel->addActor($name, $pseudo, $photo);
-        } 
+        }
+
+
+        var_dump($_POST);
+
         
         $actors = $this->actorsModel->getActors();
         $movies = $this->moviesModel->getMovies();
@@ -47,5 +51,4 @@ class ActorsController extends WebController
             "moviesActors" => $moviesActors
         ));
     }
-
 }

@@ -6,6 +6,14 @@
         <input type="text" name="name" placeholder="Nom de l'acteur">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <input type="text" name="photo" placeholder="Lien de l'image">
+        <select multiple name="films" onchange="updated(this)">
+            <option value="" disabled>Dans quel film a t-il joué?</option>
+            <?php foreach($movies as $movie):?>
+                <option value="<?= $movie->getId();?>">
+                    <p><?= $movie->getName();?></p>
+                </option>
+            <?php endforeach;?>
+        </select>
         <input type="submit" name="addActor" value="Ajouter" />
     </form>
 
