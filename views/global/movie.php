@@ -1,14 +1,10 @@
 
 <div class="block-single-movie">
+        <div class="img-baniere" style="background-image: url( <?= $movie->getImg_baniere() ?>)"></div>        
         <h2><?= $movie->getName() ?></h2>   
         <div class="">Film créé en <?= $movie->getDate() ?></div>
-        <div class=""> <img width="20%" src="<?= $movie->getImg() ?>"></div>
-        
-        <h3>Synopsis</h3>
-        <div class=""> <?= $movie->getSynopsis() ?></div>
-        
         <h3>Bande Annonce</h3>
-        <iframe width="420" height="345" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe><br/><br/>
+        <iframe src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe>
         
         <h3>Story</h3>
         <div class=""><?= $movie->getStory() ?></div>
@@ -17,9 +13,9 @@
         <div class="movie-acteur-block">
             <?php foreach($actors as $actor):?>
                 <div class="actor-card">
+                    <div class="img-actor" style="background-image: url(<?= $actor->getPhoto()?>)"></div>
                     <h4><?= $actor->getPseudo()?></h4>
                     <p>Interprété par : <?= $actor->getName()?></p>
-                    <img width="" src="<?= $actor->getPhoto()?>"></img>
                 </div>
             <?php endforeach; ?>
         </div>

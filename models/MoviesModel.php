@@ -37,10 +37,10 @@ class MoviesModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     } 
       
-    public function add($orders, $name, $date, $img, $synopsis, $ba, $story)
+    public function add($orders, $name,$img_baniere, $date, $img, $synopsis, $ba, $story)
     {
-        $stmt = $this->getPdo()->prepare("INSERT INTO movies (orders, name, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$orders, $name, $date, $img, $synopsis, $ba, $story]);
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies (orders, name, img_baniere, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$orders, $name,$img_baniere, $date, $img, $synopsis, $ba, $story]);
         $stmt->fetch();
         return $this->getPdo()->lastInsertId();
     }

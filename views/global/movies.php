@@ -5,6 +5,7 @@
     <h2>Ajouter un film</h2>
     <input type="number" name="orders" placeholder="Numero du film" >
     <input type="text" name="name" placeholder="Nom du film" >
+    <input type="text" name="name" placeholder="Lien banière" >
     <input type="number" name="date" placeholder="Année de sortie" >
     <input type="text" name="img" placeholder="Lien de l'image" >
     <input type="text" name="synopsis" placeholder="Synopsis du film" >
