@@ -6,7 +6,7 @@
         <input type="text" name="name" placeholder="Nom de l'acteur">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <input type="text" name="photo" placeholder="Lien de l'image">
-        <select multiple name="movies">
+        <select multiple name="movies[]">
             <option value="" disabled>Dans quel film a t-il joué?</option>
             <?php foreach($movies as $movie):?>
                 <option name="<?= $movie->getId();?>" value="<?= $movie->getId();?>">

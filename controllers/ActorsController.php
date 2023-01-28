@@ -32,16 +32,15 @@ class ActorsController extends WebController
     }
     
     function addActor() {
-
-        // $movies=[];
-        // foreach($_POST['movies'] as $movieId){           //TODO comment récupérer tous les fims sélectionnés?
-        //     $movies[]=$movieId;
-        // }
-
         $actorId =  $this->actorsModel->addActor($_POST['name'], $_POST['pseudo'], $_POST['photo'], $_POST['movies']);
-        $movieId = $_POST['movies'];
 
-        $this->actorsModel->saveActorMovies($movieId, $actorId);
+        if(isset($_POST['movies']) && !empty($_POST['movies'])){
+            $moviesId = $_POST['movies'];
+                foreach($moviesId as $movieId){
+                    $this->actorsModel->saveActorMovies($movieId, $actorId);
+            }
+        }
+
         
         $actors = $this->actorsModel->getActors();
         $movies = $this->moviesModel->getMovies();
@@ -52,5 +51,9 @@ class ActorsController extends WebController
             "movies" => $movies,
             "moviesActors" => $moviesActors
         ));
+    }
+
+    function updateActor(){
+
     }
 }
