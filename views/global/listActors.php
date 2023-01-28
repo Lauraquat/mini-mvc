@@ -1,4 +1,7 @@
-<button class="linkadd" onclick="openForm()">Ajouter un acteur</button>
+<?php if($_SESSION['id'] != NULL):?>
+    <button class="linkadd" onclick="openForm()">Ajouter un acteur</button>
+<?php endif; ?>
+
 
 <section id="section-actors">
     <form action="addActor" method="POST" id="forms">

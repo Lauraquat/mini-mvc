@@ -1,7 +1,9 @@
-<button class="linkadd" onclick="openForm()">Ajouter un film</button>
+<?php if($_SESSION['id'] != NULL):?>
+    <button class="linkadd" onclick="openForm()">Ajouter un film</button>
+<?php endif; ?>
 
 <main id="moviesMain">
-<form action="add" id="forms">
+<form action="add" method="POST" id="forms">
     <h2>Ajouter un film</h2>
     <input type="number" name="orders" placeholder="Numero du film" >
     <input type="text" name="name" placeholder="Nom du film" >

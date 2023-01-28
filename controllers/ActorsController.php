@@ -32,6 +32,7 @@ class ActorsController extends WebController
     }
     
     function addActor() {
+
         $actorId =  $this->actorsModel->addActor($_POST['name'], $_POST['pseudo'], $_POST['photo'], $_POST['movies']);
 
         if(isset($_POST['movies']) && !empty($_POST['movies'])){
@@ -53,7 +54,7 @@ class ActorsController extends WebController
         ));
     }
 
-    function updateActor(){
+    // function updateActor(){
 
-    }
+    // }
 }
