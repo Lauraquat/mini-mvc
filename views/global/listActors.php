@@ -1,15 +1,15 @@
 <button class="linkadd" onclick="openForm()">Ajouter un acteur</button>
 
 <section id="section-actors">
-    <form action="addActor" id="forms">
+    <form action="addActor" method="POST" id="forms">
         <h2>Ajouter un acteur</h2>
         <input type="text" name="name" placeholder="Nom de l'acteur">
         <input type="text" name="pseudo" placeholder="Pseudo">
         <input type="text" name="photo" placeholder="Lien de l'image">
-        <select multiple name="films" onchange="updated(this)">
+        <select multiple name="movies">
             <option value="" disabled>Dans quel film a t-il joué?</option>
             <?php foreach($movies as $movie):?>
-                <option value="<?= $movie->getId();?>">
+                <option name="<?= $movie->getId();?>" value="<?= $movie->getId();?>">
                     <p><?= $movie->getName();?></p>
                 </option>
             <?php endforeach;?>

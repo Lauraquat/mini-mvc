@@ -31,14 +31,16 @@ class ActorsModel extends SQL
     
     function addActor($name, $pseudo, $photo)
     {
-        $stmt = $this->getPdo()->prepare("INSERT INTO actors (`name`, `pseudo`, `photo`) VALUES (?, ?, ?)");
+        $stmt = $this->getPdo()->prepare("INSERT INTO actors (name, pseudo, photo) VALUES (?, ?, ?)");
         $stmt->execute([$name, $pseudo, $photo]);
         $stmt->fetch();
         return $this->getPdo()->lastInsertId();
     }
 
     function saveActorMovies($movie_id, $actors_id){
-        //Insérer dans table movies_actors avec un foreach par movie dans controller
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies_actors (movies_id, actors_id) VALUES (?, ?)");
+        $stmt->execute([$movie_id, $actors_id]);
+        $stmt->fetch();
     }
 
 }
