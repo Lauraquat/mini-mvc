@@ -3,9 +3,9 @@
 <?php endif; ?>
 
 <main id="moviesMain">
+<!-- <form action="add" method="POST" class="forms"> -->
 <form action="add" method="POST" id="forms">
     <h2>Ajouter un film</h2>
-    <input type="number" name="orders" placeholder="Numero du film" >
     <input type="text" name="name" placeholder="Nom du film" >
     <input type="number" name="date" placeholder="Année de sortie" >
     <input type="text" name="img" placeholder="Lien de l'image" >
@@ -16,7 +16,7 @@
 </form>
 
     <?php foreach($movies as $movie):?>
-        <a class="card" href="movie/<?= $movie->getOrders()?>">
+        <a class="card" href="movie/<?= $movie->getId()?>">
             <img width="" src="<?= $movie->getImg()?>">
             <div class="moviescontent" >
                 <h2><?= $movie->getName()?></h2>

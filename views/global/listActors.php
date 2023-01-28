@@ -4,6 +4,7 @@
 
 
 <section id="section-actors">
+    <!-- <form action="addActor" method="POST" class="forms"> -->
     <form action="addActor" method="POST" id="forms">
         <h2>Ajouter un acteur</h2>
         <input type="text" name="name" placeholder="Nom de l'acteur">

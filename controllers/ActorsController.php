@@ -53,8 +53,4 @@ class ActorsController extends WebController
             "moviesActors" => $moviesActors
         ));
     }
-
-    // function updateActor(){
-
-    // }
 }

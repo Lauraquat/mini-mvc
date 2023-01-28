@@ -3,8 +3,11 @@
 session_start();
 ?>
 
-<a href="/login">Se connecter</a>
-<a href="/register">S'inscrire</a>
+<?php if(!isset($_SESSION["username"])):?>
+    <a href="/login">Se connecter</a>
+    <a href="/register">S'inscrire</a>
+<?php endif; ?>
+
 
 <?php if(isset($_SESSION["username"])):?>
     <div class="sucess">
