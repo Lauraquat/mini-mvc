@@ -58,9 +58,9 @@ class MoviesController extends WebController
         ));
     }
     
-    function add($add ,$orders, $name, $date, $img, $synopsis, $ba, $story) {
+    function add($add ,$orders, $name, $img_baniere, $date, $img, $synopsis, $ba, $story) {
         if (isset($add)) {
-            $movies =  $this->moviesModel->add($orders, $name, $date, $img, $synopsis, $ba, $story);
+            $movies =  $this->moviesModel->add($orders, $name, $img_baniere, $date, $img, $synopsis, $ba, $story);
         }
 
         $movies = $this->moviesModel->getMovies();

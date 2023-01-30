@@ -19,6 +19,7 @@ class CommentsController extends WebController
     function addCom(){
             $comments =  $this->commentsModel->addCom($_POST["movies_id"], $_POST["message"], $_POST["date"]);
 
+
             return Template::render("views/global/movie.php", array(
             "comments" => $comments,
         ));

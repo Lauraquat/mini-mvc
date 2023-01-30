@@ -7,15 +7,8 @@ session_start();
     exit(); 
   }
 ?>
-
     <div class="sucess">
     <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
     <p>Voici notre site sur la saga Retour vers le Futur</p>
     <a href="/logout">Déconnexion</a>
     </div>
-
-
-
-
-
-<?php require ('./common/footer.php') ?>
