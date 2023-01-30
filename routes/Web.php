@@ -8,7 +8,7 @@ use controllers\GalleryController;
 use controllers\MoviesController;
 use controllers\CommentsController;
 use routes\base\Route;
-use utils\SessionHelpers;
+// use utils\SessionHelpers;
 
 class Web
 {
@@ -25,15 +25,10 @@ class Web
         // Appel des méthodes dans le contrôleur $movies.
         Route::Add('/', [$movies, 'home']);
         Route::Add('/movies', [$movies, 'getAllMovies']);
-        Route::Add('/movie/{orders}', [$movies, 'getOneMovie']);
         Route::Add('/add', [$movies, 'add']);
-        
-
-
-        
-
-
-
+        Route::Add('/update/{id}', [$movies, 'update']);
+        Route::Add('/movie/{id}', [$movies, 'getOneMovie']);
+    
 
         $gallery = new GalleryController();
         
@@ -58,10 +53,10 @@ class Web
 
 
 
-        //Exemple de limitation d'accès à une page en fonction de la SESSION.
-        if (SessionHelpers::isLogin()) {
-            Route::Add('/logout', [$account, 'home']);
-        }
+        // //Exemple de limitation d'accès à une page en fonction de la SESSION.
+        // if (SessionHelpers::isLogin()) {
+        //     Route::Add('/logout', [$account, 'home']);
+        // }
     }
 }
 

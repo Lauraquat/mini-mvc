@@ -21,9 +21,9 @@ class MoviesModel extends SQL
     }
 
 
-    public function getMovieByOrders($orders): Movie
+    public function getMovieById($id): Movie
     {
-        $query = "SELECT * FROM movies WHERE orders =" . $orders;
+        $query = "SELECT * FROM movies WHERE id =" . $id;
         $stmt = SQL::getPdo()->prepare($query);
         $stmt->execute();
         return $stmt->fetchObject(Movie::class);
@@ -37,12 +37,16 @@ class MoviesModel extends SQL
         return $stmt->fetchAll(\PDO::FETCH_CLASS, Movie::class);
     } 
       
-    public function add($orders, $name,$img_baniere, $date, $img, $synopsis, $ba, $story)
+    public function add($name, $date, $img, $synopsis, $ba, $story)
     {
-        $stmt = $this->getPdo()->prepare("INSERT INTO movies (orders, name, img_baniere, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$orders, $name,$img_baniere, $date, $img, $synopsis, $ba, $story]);
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies (name, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$name, $date, $img, $synopsis, $ba, $story]);
         $stmt->fetch();
-        return $this->getPdo()->lastInsertId();
     }
 
+    public function update($movie)
+    {
+        $stmt = $this->getPdo()->prepare("UPDATE movies SET name = ?, date = ?, img = ?, synopsis = ?, ba = ?, story = ? WHERE id =" . $movie->getId());
+        $stmt->execute([$movie->getName(), $movie->getDate(), $movie->getImg(), $movie->getSynopsis(), $movie->getBa(), $movie->getStory()]);
+    }
 }

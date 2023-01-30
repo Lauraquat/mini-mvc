@@ -31,10 +31,17 @@ class ActorsController extends WebController
         ));
     }
     
-    function addActor($addActor, $name, $pseudo, $photo) {
-        if (isset($addActor)) {
-            $actor =  $this->actorsModel->addActor($name, $pseudo, $photo);
-        } 
+    function addActor() {
+
+        $actorId =  $this->actorsModel->addActor($_POST['name'], $_POST['pseudo'], $_POST['photo'], $_POST['movies']);
+
+        if(isset($_POST['movies']) && !empty($_POST['movies'])){
+            $moviesId = $_POST['movies'];
+                foreach($moviesId as $movieId){
+                    $this->actorsModel->saveActorMovies($movieId, $actorId);
+            }
+        }
+
         
         $actors = $this->actorsModel->getActors();
         $movies = $this->moviesModel->getMovies();
@@ -42,10 +49,8 @@ class ActorsController extends WebController
 
         return Template::render("views/global/listActors.php", array(
             "actors" => $actors,
-            "actor" => $actor,
             "movies" => $movies,
             "moviesActors" => $moviesActors
         ));
     }
-
 }

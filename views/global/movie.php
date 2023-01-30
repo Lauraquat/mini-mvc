@@ -1,3 +1,19 @@
+<?php if($_SESSION['id'] != NULL):?>
+    <button class="linkadd" onclick="openForm()">Modifier le film</button>
+<?php endif; ?>
+
+
+<!-- <form action="updateMovie" method="POST" class="forms"> -->
+<form action="/update/<?= $movie->getId()?>" method="POST" id="forms">
+    <h2>Modifier le film</h2>
+    <input type="text" name="name" placeholder="Nom du film" value="<?= $movie->getName()?>">
+    <input type="number" name="date" placeholder="Année de sortie" value="<?= $movie->getDate()?>">
+    <input type="text" name="img" placeholder="Lien de l'image" value="<?= $movie->getImg()?>">
+    <input type="text" name="synopsis" placeholder="Synopsis du film" value="<?= $movie->getSynopsis()?>" >
+    <input type="text" name="ba" placeholder="Lien de la bande annonce"  value="<?= $movie->getBa()?>">
+    <input type="textarea" name="story" placeholder="Histoire"  value="<?= $movie->getStory()?>">
+    <input type="submit" name="edit" value="Modifier" />
+</form>
 
 <div class="block-single-movie">
         <div class="img-baniere" style="background-image: url( <?= $movie->getImg_baniere() ?>)"></div>        

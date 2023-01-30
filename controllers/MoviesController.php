@@ -40,15 +40,11 @@ class MoviesController extends WebController
     }
 
 
-    public function getOneMovie($orders){
-        $movie = $this->moviesModel->getMovieByOrders($orders);
-        // $actors = $this->actorsModel->getActors();
-        $actors = $this->actorsModel->getActorsByMovie($movie->getId());
-
-        // echo '<pre>' , var_dump($movie->getId()) , '</pre>';
-        $images = $this->imagesModel->getImagesByMovie($movie->getId());
-        $comments = $this->commentsModel->getCommentsByMovie($movie->getId());
-
+    public function getOneMovie($id){
+        $movie = $this->moviesModel->getMovieById($id);
+        $actors = $this->actorsModel->getActorsByMovie($id);
+        $images = $this->imagesModel->getImagesByMovie($id);
+        $comments = $this->commentsModel->getCommentsByMovie($id);
         
         return Template::render("views/global/movie.php", array(
             "movie" => $movie,
@@ -58,14 +54,37 @@ class MoviesController extends WebController
         ));
     }
     
-    function add($add ,$orders, $name, $img_baniere, $date, $img, $synopsis, $ba, $story) {
-        if (isset($add)) {
-            $movies =  $this->moviesModel->add($orders, $name, $img_baniere, $date, $img, $synopsis, $ba, $story);
-        }
+    function add($name, $date, $img, $synopsis, $ba, $story) {
+        
+        $movies =  $this->moviesModel->add($name, $date, $img, $synopsis, $ba, $story);
 
         $movies = $this->moviesModel->getMovies();
         return Template::render("views/global/movies.php", array(
             "movies" => $movies,
+        ));
+    }
+
+
+    function update($id, $name, $date, $img, $synopsis, $ba, $story) {
+        $movie = $this->moviesModel->getMovieById($id);
+        $actors = $this->actorsModel->getActorsByMovie($id);
+        $images = $this->imagesModel->getImagesByMovie($id);
+        $comments = $this->commentsModel->getCommentsByMovie($id);
+
+        $movie->setName($name);
+        $movie->setDate($date);
+        $movie->setImg($img);
+        $movie->setSynopsis($synopsis);
+        $movie->setBa($ba);
+        $movie->setStory($story);
+
+        $this->moviesModel->update($movie);
+
+        return Template::render("views/global/movie.php", array(
+            "movie" => $movie,
+            "images" => $images,
+            "actors" => $actors,
+            "comments" => $comments,
         ));
     }
 

@@ -16,5 +16,6 @@ function closemenu(){
 
 function openForm(){
     document.getElementById('forms').style.display = "flex";
+    // document.getElementsByClassName('forms').style.display = "flex";
     document.querySelector('.linkadd').style.display = "none"; 
 }
