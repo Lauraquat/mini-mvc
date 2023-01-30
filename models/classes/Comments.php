@@ -4,6 +4,7 @@ namespace models\classes;
 class Comments
 {
     private int $id;
+    private string $pseudo;
     private int $movies_id;
     private int $users_id;
     private string $commentaires;
@@ -27,6 +28,21 @@ class Comments
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+ /**
+     * @return string
+     */
+    public function getPseudo(): string
+    {
+        return $this->pseudo;
+    }
+
+    /**
+     * @param string $pseudo
+     */
+    public function setPseudo(string $pseudo): void
+    {
+        $this->pseudo = $pseudo;
     }
 
     

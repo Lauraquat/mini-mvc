@@ -19,6 +19,8 @@
         <?php if(!isset($_SESSION["username"])):?>
             <a href="/login">Se connecter</a>
             <!-- <a href="/register">S'inscrire</a> -->
+        <?php endif; ?>
+        <?php if(isset($_SESSION["username"])):?>
             <a href="/logout">Déconnexion</a>
         <?php endif; ?>
         <div id="menu-button" class="close" onclick="openmenu()"></div>

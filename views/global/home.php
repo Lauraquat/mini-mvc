@@ -3,7 +3,6 @@
 session_start();
 ?>
 
-
 <?php if(isset($_SESSION["username"])):?>
     <div class="">
         <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
