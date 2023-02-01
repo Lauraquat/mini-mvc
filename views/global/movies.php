@@ -1,13 +1,14 @@
+<div class="p-2">
+
 <?php if($_SESSION['id'] != NULL):?>
     <button class="linkadd" onclick="openForm()">Ajouter un film</button>
 <?php endif; ?>
 
-<main id="moviesMain">
 <!-- <form action="add" method="POST" class="forms"> -->
 <form action="add" method="POST" id="forms">
     <h2>Ajouter un film</h2>
     <input type="text" name="name" placeholder="Nom du film" >
-    <input type="text" name="name" placeholder="Lien banière" >
+    <input type="text" name="img-baniere" placeholder="Lien banière" >
     <input type="number" name="date" placeholder="Année de sortie" >
     <input type="text" name="img" placeholder="Lien de l'image" >
     <input type="text" name="synopsis" placeholder="Synopsis du film" >
@@ -15,6 +16,7 @@
     <input type="textarea" name="story" placeholder="Histoire" >
     <input type="submit" name="add" value="Ajouter" class="btn-submit"/>
 </form>
+<main id="moviesMain">
 
     <?php foreach($movies as $movie):?>
         <a class="card" href="movie/<?= $movie->getId()?>">
@@ -31,4 +33,4 @@
 </main>
 
 
- 
+</div>

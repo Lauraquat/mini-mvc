@@ -29,7 +29,7 @@ class CommentsModel extends SQL
 
     public function addCom($pseudo, $movies_id, $commentaires, $comments_date)
     {
-        $stmt = $this->getPdo()->prepare("INSERT INTO comments (`pseudo`, `movies_id`, `commentaires`, `comments_date`) VALUES (?, ?, ?)");
+        $stmt = $this->getPdo()->prepare("INSERT INTO comments (`pseudo`, `movies_id`, `commentaires`, `comments_date`) VALUES (?, ?, ?, ?)");
         $stmt->execute([$pseudo, $movies_id, $commentaires, $comments_date]);
         $stmt->fetch();
         return $this->getPdo()->lastInsertId();

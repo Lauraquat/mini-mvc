@@ -11,7 +11,7 @@ class Movie
 {
     public int $id;
     public string $name;
-    public string $img_baniere;
+    public string $imgbaniere;
     public string $date;
     public string $img;
     public string $synopsis;
@@ -84,17 +84,17 @@ class Movie
     /**
      * @return string
      */
-    public function getImg_baniere(): string
+    public function getImgBaniere(): string
     {
-        return $this->img_baniere;
+        return $this->imgbaniere;
     }
 
     /**
-     * @param string $img_baniere
+     * @param string $imgbaniere
      */
-    public function setImg_baniere(string $img_baniere): void
+    public function setImgBaniere(string $imgbaniere): void
     {
-        $this-> $img_baniere;
+        $this-> $imgbaniere;
     }
     /**
      * @return 

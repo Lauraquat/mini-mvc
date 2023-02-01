@@ -81,7 +81,7 @@ ul{
   display: none;
   width: 100%;
   margin: 0;
-  z-index: 1;
+  z-index: 10;
 }
 #menu.show-menu{
   transform:translateY(51px);
@@ -374,7 +374,6 @@ max-height: 12rem;
 .img-baniere{
   width: 100%;
   min-height: 100vh;
-  z-index: -2;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -398,7 +397,6 @@ max-height: 12rem;
   width:90%;
   top:0;
   left:0;
-  z-index: -2;
   background: linear-gradient(90deg, #111, #111 28%, #3330 75%);
 } 
 
@@ -408,6 +406,9 @@ max-height: 12rem;
   flex-direction: column;
   gap: 2rem;
   align-items: flex-start;
+}
+.z-1{
+  z-index: 1;
 }
 
 .com{
@@ -421,3 +422,12 @@ max-height: 12rem;
   align-items: flex-end;
 }
 
+.forms-login textarea{
+  width: 60%;
+    margin: auto;
+    height: 5rem;
+    padding: 0.5rem 1rem;
+}
+.p-2{
+  padding: 2rem;
+}

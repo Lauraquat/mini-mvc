@@ -1,14 +1,13 @@
-<div class="block-single-movie">
-    <div class="img-baniere" style="background-image: url( <?= $movie->getImg_baniere() ?>)"> 
-    <div class="bg-single-movie"></div>      
-        <?php if($_SESSION['id'] != NULL):?>
-            <button class="linkadd" onclick="openForm()">Modifier le film</button>
-        <?php endif; ?>
-
-        <!-- <form action="updateMovie" method="POST" class="forms"> -->
-        <form action="/update/<?= $movie->getId()?>" method="POST" id="forms">
+<div class="img-baniere" style="background-image: url( <?= $movie->getImgBaniere() ?>)"> 
+    <?php if($_SESSION['id'] != NULL):?>
+        <button class="linkadd z-1" onclick="openForm()">Modifier le film</button>
+    <?php endif; ?>
+            
+            <!-- <form action="updateMovie" method="POST" class="forms"> -->
+        <form action="/update/<?= $movie->getId()?>" method="POST" id="forms" class="z-1">
             <h2>Modifier le film</h2>
             <input type="text" name="name" placeholder="Nom du film" value="<?= $movie->getName()?>">
+            <input type="text" name="imgbaniere" placeholder="Lien banière" value="<?= $movie->getImgBaniere()?>">
             <input type="number" name="date" placeholder="Année de sortie" value="<?= $movie->getDate()?>">
             <input type="text" name="img" placeholder="Lien de l'image" value="<?= $movie->getImg()?>">
             <input type="text" name="synopsis" placeholder="Synopsis du film" value="<?= $movie->getSynopsis()?>" >
@@ -16,13 +15,14 @@
             <input type="textarea" name="story" placeholder="Histoire"  value="<?= $movie->getStory()?>">
             <input type="submit" name="edit" value="Modifier" class="btn-submit"/>
         </form>
-
-        <div>
-            <h1><?= $movie->getName() ?></h1>   
-            <div class="">Film créé en <?= $movie->getDate() ?></div>
+        
+        <div class="bg-single-movie"></div>      
+        <div class="z-1">
+            <h1 ><?= $movie->getName() ?></h1>   
+            <div>Film créé en <?= $movie->getDate() ?></div>
         </div>
-        <iframe class="bafilm" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe>
-        <div class=""><?= $movie->getStory() ?></div>
+        <iframe class="bafilm z-1" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe>
+        <div class="z-1"><?= $movie->getStory() ?></div>
     </div> 
     <div class="storymovie">
                        
@@ -43,18 +43,18 @@
             </div>
             
             <h3>Commentaires</h3>
-        <?php foreach($comments as $comment):?>
-            <div class="com">            
-                
+            <?php foreach($comments as $comment):?>
+                <div class="com">            
                 <h3>
                     "<?= $comment->getCommentaires()?>"
                 <br> 
                  par <?= $comment->getPseudo()?>
                 </h3>
                 <p>Ecrit le "<?= $comment->getCommentsDate()?>"</p>
-            <?php endforeach; ?>
             </div>
+            <?php endforeach; ?>
             <form action="addCom" method="POST" class="forms-login">
+                <h4>Ajouter un commentaire</h4>
                 <input type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo"/>
                 <input type="hidden" name="movies_id" id="movies_id" value="<?= $movie->id ?>"/>
                 <textarea id="texte" name="commentaires" id="commentaires" placeholder="Votre commentaire"></textarea>
@@ -62,4 +62,3 @@
                 <input type="submit" name="addCom" class="btn-submit" value="Valider">
             </form>
         </div>
-</div>
