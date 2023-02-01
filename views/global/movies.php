@@ -13,7 +13,7 @@
     <input type="text" name="synopsis" placeholder="Synopsis du film" >
     <input type="text" name="ba" placeholder="Lien de la bande annonce" >
     <input type="textarea" name="story" placeholder="Histoire" >
-    <input type="submit" name="add" value="Ajouter" />
+    <input type="submit" name="add" value="Ajouter" class="btn-submit"/>
 </form>
 
     <?php foreach($movies as $movie):?>

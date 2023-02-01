@@ -19,3 +19,26 @@ function openForm(){
     // document.getElementsByClassName('forms').style.display = "flex";
     document.querySelector('.linkadd').style.display = "none"; 
 }
+
+
+function eyeclick(){
+    const eye = document.getElementById("eye");
+const eyeoff = document.getElementById("eyeoff");
+const passwordField = document.querySelector("input[type=password]");
+
+  eye.style.display = "none";
+  eyeoff.style.display = "block";
+
+  passwordField.type = "text";
+};
+
+function eyeoffclick() {
+const eye = document.getElementById("eye");
+const eyeoff = document.getElementById("eyeoff");
+const passwordField = document.getElementById("password");
+
+  eyeoff.style.display = "none";
+  eye.style.display = "block";
+
+  passwordField.type = "password";
+};

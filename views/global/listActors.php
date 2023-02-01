@@ -18,7 +18,7 @@
                 </option>
             <?php endforeach;?>
         </select>
-        <input type="submit" name="addActor" value="Ajouter" />
+        <input type="submit" name="addActor" value="Ajouter" class="btn-submit" />
     </form>
 
     <?php foreach($actors as $actor): ?>
