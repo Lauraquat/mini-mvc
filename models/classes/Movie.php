@@ -45,7 +45,7 @@ class Movie
 
     public function toString(): string
     {
-        return "$this->name, $this->date, $this->img, $this->synopsis, $this->ba, $this->story";
+        return "$this->name,$this->imgbaniere, $this->date, $this->img, $this->synopsis, $this->ba, $this->story";
     }
 
     /**

@@ -39,8 +39,8 @@ class MoviesModel extends SQL
       
     public function add($name,$imgbaniere, $date, $img, $synopsis, $ba, $story)
     {
-        $stmt = $this->getPdo()->prepare("INSERT INTO movies (name,imgbaniere, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$name,$imgbaniere, $date, $img, $synopsis, $ba, $story]);
+        $stmt = $this->getPdo()->prepare("INSERT INTO movies (name, imgbaniere, date, img, synopsis, ba, story) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$name, $imgbaniere, $date, $img, $synopsis, $ba, $story]);
         $stmt->fetch();
     }
 

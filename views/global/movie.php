@@ -1,5 +1,5 @@
 <div class="img-baniere" style="background-image: url( <?= $movie->getImgBaniere() ?>)"> 
-    <?php if($_SESSION['id'] != NULL):?>
+    <?php if(isset($_SESSION['id'])):?>
         <button class="linkadd z-1" onclick="openForm()">Modifier le film</button>
     <?php endif; ?>
             
@@ -10,7 +10,7 @@
             <input type="text" name="imgbaniere" placeholder="Lien banière" value="<?= $movie->getImgBaniere()?>">
             <input type="number" name="date" placeholder="Année de sortie" value="<?= $movie->getDate()?>">
             <input type="text" name="img" placeholder="Lien de l'image" value="<?= $movie->getImg()?>">
-            <input type="text" name="synopsis" placeholder="Synopsis du film" value="<?= $movie->getSynopsis()?>" >
+            <input type="textarea" name="synopsis" placeholder="Synopsis du film" value="<?= $movie->getSynopsis()?>" >
             <input type="text" name="ba" placeholder="Lien de la bande annonce"  value="<?= $movie->getBa()?>">
             <input type="textarea" name="story" placeholder="Histoire"  value="<?= $movie->getStory()?>">
             <input type="submit" name="edit" value="Modifier" class="btn-submit"/>
@@ -53,7 +53,8 @@
                 <p>Ecrit le "<?= $comment->getCommentsDate()?>"</p>
             </div>
             <?php endforeach; ?>
-            <form action="addCom" method="POST" class="forms-login">
+            
+            <form action="/addCom/<?= $movie->getId()?>" method="POST" class="forms-login">
                 <h4>Ajouter un commentaire</h4>
                 <input type="text" name="pseudo" id="pseudo" placeholder="Votre pseudo"/>
                 <input type="hidden" name="movies_id" id="movies_id" value="<?= $movie->id ?>"/>

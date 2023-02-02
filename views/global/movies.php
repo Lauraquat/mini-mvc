@@ -1,6 +1,6 @@
 <div class="p-2">
 
-<?php if($_SESSION['id'] != NULL):?>
+<?php if(isset($_SESSION['id'])):?>
     <button class="linkadd" onclick="openForm()">Ajouter un film</button>
 <?php endif; ?>
 
@@ -8,7 +8,7 @@
 <form action="add" method="POST" id="forms">
     <h2>Ajouter un film</h2>
     <input type="text" name="name" placeholder="Nom du film" >
-    <input type="text" name="img-baniere" placeholder="Lien banière" >
+    <input type="text" name="imgbaniere" placeholder="Lien banière" >
     <input type="number" name="date" placeholder="Année de sortie" >
     <input type="text" name="img" placeholder="Lien de l'image" >
     <input type="text" name="synopsis" placeholder="Synopsis du film" >

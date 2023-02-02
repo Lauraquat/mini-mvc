@@ -1,4 +1,4 @@
-<?php if($_SESSION['id'] != NULL):?>
+<?php if(isset($_SESSION['id'])):?>
     <button class="linkadd" onclick="openForm()">Ajouter un acteur</button>
 <?php endif; ?>
 

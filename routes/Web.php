@@ -15,10 +15,10 @@ class Web
     function __construct()
     {
 
-        $comments = new CommentsController();
+        // $comments = new CommentsController();
 
-        //Appel des méthodes pour les commentaires
-        Route::Add('/movie/addCom', [$comments, 'addCom']);
+        // //Appel des méthodes pour les commentaires
+        // Route::Add('/movie/{id}/addCom', [$comments, 'addCom']);
 
         $movies = new MoviesController();
 
@@ -28,7 +28,8 @@ class Web
         Route::Add('/add', [$movies, 'add']);
         Route::Add('/update/{id}', [$movies, 'update']);
         Route::Add('/movie/{id}', [$movies, 'getOneMovie']);
-    
+        Route::Add('/addCom/{id}', [$movies, 'addCom']);
+
 
         $gallery = new GalleryController();
         

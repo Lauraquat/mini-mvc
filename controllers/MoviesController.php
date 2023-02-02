@@ -87,5 +87,21 @@ class MoviesController extends WebController
             "comments" => $comments,
         ));
     }
+    
+    public function addCom($id){
+        $movie = $this->moviesModel->getMovieById($id);
+        $actors = $this->actorsModel->getActorsByMovie($id);
+        $images = $this->imagesModel->getImagesByMovie($id);
 
+        $this->commentsModel->addCom($_POST["pseudo"], $_POST["movies_id"], $_POST["commentaires"], $_POST["date"]);
+
+        $comments = $this->commentsModel->getCommentsByMovie($id);
+
+        return Template::render("views/global/movie.php", array(
+            "movie" => $movie,
+            "images" => $images,
+            "actors" => $actors,    
+            "comments"=> $comments,
+    ));
+}
 }

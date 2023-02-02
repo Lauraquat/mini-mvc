@@ -1,6 +1,9 @@
 <?php
 // Initialiser la session
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start();
+}
 ?>
 
 <?php if(isset($_SESSION["username"])):?>
