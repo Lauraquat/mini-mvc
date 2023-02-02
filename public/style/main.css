@@ -393,7 +393,7 @@ max-height: 12rem;
 .bg-single-movie {
   position: absolute;
   content:"";
-  min-height: 100vh;
+  min-height: 100%;
   width:90%;
   top:0;
   left:0;
@@ -430,4 +430,150 @@ max-height: 12rem;
 }
 .p-2{
   padding: 2rem;
+}
+
+.imghomepage{
+  background-image: url(../image/back_to_the_future.jpg);
+  height: 88vh;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.bg-home{
+  position: absolute;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.imghomepage h1, .imghomepage h2{
+  width: 40%;
+  text-align: center;
+}
+.logindest{
+  display: block;
+}
+.loginmob{
+  display: none;
+}
+#submit{
+  font-size: 1.2rem;
+}
+.storymovie{
+  padding: 2rem;
+}
+.story{
+  background-color: #1111119e;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+.blocklistactor{
+  display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#multiselectactor{
+  background-color: rgb(26, 26, 26);
+  color: white;
+  padding: 0.5rem;
+  width: 60%;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+}
+#multiselectactor option{
+  margin-bottom: 0.5rem;
+}
+.anim{
+  position: relative;
+  display: flex;
+  height: 7rem;
+  overflow: hidden;
+}
+.imgcar{
+  position: absolute;
+  right: -13rem;
+  bottom: 0;
+  height: 6rem;
+  animation-name: roule;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+.commentsdiv{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+@keyframes roule {
+  from {right: -13rem;}
+  to {right: 110%;}
+}
+@media (max-width: 450px) {
+  .imghomepage h1, .imghomepage h2{
+    width: 100%;
+    text-align: center;
+  }
+  .imghomepage{
+    padding: 2rem;
+    justify-content:space-between;
+  }
+  .logindest{
+    display: none;
+  }
+  .loginmob{
+    display: block;
+  }
+  .forms-login input{
+    width: 95%;
+  }
+  .bafilm {
+    width: 85vw;
+    height: 15rem;
+  }
+  .movie-galerie img{
+    height: auto;
+    width: 100%;
+  }
+  .forms-login textarea{
+    width: 95%;
+  }
+  .com{
+    align-items: flex-start;
+    width: 100%;
+  }
+  .img-gallery{
+    max-height: 13rem;
+    width: 100%;
+  }
+  .linkadd{
+    margin-left: 0;
+  }
+  #forms{
+    width: 100%;
+  }
+  #forms input{
+    width: 100%;
+    margin: 0;
+  }
+  #section-actors{
+    padding: 0;
+  }
+  .actor-card{
+    width: 100%;
+  }
+  #multiselectactor{
+    width: 100%;
+  }
+  .password-icon{
+    right: 15px;
+  }
 }

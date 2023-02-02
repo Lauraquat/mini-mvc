@@ -6,7 +6,6 @@ use controllers\AccountController;
 use controllers\ActorsController;
 use controllers\GalleryController;
 use controllers\MoviesController;
-use controllers\CommentsController;
 use routes\base\Route;
 // use utils\SessionHelpers;
 
@@ -15,12 +14,7 @@ class Web
     function __construct()
     {
 
-        // $comments = new CommentsController();
-
-        // //Appel des méthodes pour les commentaires
-        // Route::Add('/movie/{id}/addCom', [$comments, 'addCom']);
-
-        $movies = new MoviesController();
+        $movies = new MoviesController(); 
 
         // Appel des méthodes dans le contrôleur $movies.
         Route::Add('/', [$movies, 'home']);

@@ -7,8 +7,8 @@
         <form action="/update/<?= $movie->getId()?>" method="POST" id="forms" class="z-1">
             <h2>Modifier le film</h2>
             <input type="text" name="name" placeholder="Nom du film" value="<?= $movie->getName()?>">
-            <input type="text" name="imgbaniere" placeholder="Lien banière" value="<?= $movie->getImgBaniere()?>">
-            <input type="number" name="date" placeholder="Année de sortie" value="<?= $movie->getDate()?>">
+            <input type="text" name="imgbaniere" placeholder="Lien image banière" value="<?= $movie->getImgBaniere()?>">
+            <input type="number" name="date" placeholder="Année de sortie" min="1900" value="<?= $movie->getDate()?>">
             <input type="text" name="img" placeholder="Lien de l'image" value="<?= $movie->getImg()?>">
             <input type="textarea" name="synopsis" placeholder="Synopsis du film" value="<?= $movie->getSynopsis()?>" >
             <input type="text" name="ba" placeholder="Lien de la bande annonce"  value="<?= $movie->getBa()?>">
@@ -22,7 +22,7 @@
             <div>Film créé en <?= $movie->getDate() ?></div>
         </div>
         <iframe class="bafilm z-1" src='<?= $movie->getBa() ?>' frameborder="0" allowfullscreen></iframe>
-        <div class="z-1"><?= $movie->getStory() ?></div>
+        <div class="z-1 story"><?= $movie->getStory() ?></div>
     </div> 
     <div class="storymovie">
                        
@@ -43,6 +43,7 @@
             </div>
             
             <h3>Commentaires</h3>
+            <div class="commentsdiv">
             <?php foreach($comments as $comment):?>
                 <div class="com">            
                 <h3>
@@ -53,6 +54,7 @@
                 <p>Ecrit le "<?= $comment->getCommentsDate()?>"</p>
             </div>
             <?php endforeach; ?>
+            </div>
             
             <form action="/addCom/<?= $movie->getId()?>" method="POST" class="forms-login">
                 <h4>Ajouter un commentaire</h4>

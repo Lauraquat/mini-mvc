@@ -19,7 +19,6 @@
 
     <?= $error ? $error : ""; ?>
 </form>
-
 <script>
   feather.replace();
 </script>

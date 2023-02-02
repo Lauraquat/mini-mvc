@@ -17,10 +17,10 @@
     </a>
     <div class="div-menu-connect">
         <?php if(!isset($_SESSION["username"])):?>
-            <a href="/login">Se connecter</a>
+            <a class="logindest" href="/login">Se connecter</a>
         <?php endif; ?>
         <?php if(isset($_SESSION["username"])):?>
-            <a href="/logout">Déconnexion</a>
+            <a class="logindest" href="/logout">Déconnexion</a>
         <?php endif; ?>
         <div id="menu-button" class="close" onclick="openmenu()"></div>
         <div id="menu-button2" class="" onclick="closemenu()"></div>
@@ -31,6 +31,18 @@
             <li><a href="/movies">Les films</a></li>
             <li><a href="/actors">Les acteurs</a>
             <li><a href="/gallery">Galerie</a></li>
+            <?php if(!isset($_SESSION["username"])):?>
+                <li class="loginmob">
+                    <a  href="/login">Se connecter</a>
+                </li>
+            <?php endif; ?>
+            <?php if(isset($_SESSION["username"])):?>
+                <li class="loginmob">
+                    <a  href="/logout">Déconnexion</a>
+                </li>
+            <?php endif; ?>
+
+
             </li>
         </ul>
     </nav>

@@ -12,7 +12,9 @@
     <input name="submit" type="submit" id="submit" value="Se connecter" class="btn-submit">
     <a href="/register">S'inscrire</a>
 </form>
-
+<div class="anim">
+    <img class="imgcar" src="/public/image/delorean.svg" alt="delorean">
+</div>
 <script>
   feather.replace();
 </script>
